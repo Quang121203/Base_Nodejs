@@ -1,13 +1,24 @@
-const homeController =(req, res)=>{
+const connection = require('../database/connection');
+
+const getHome = (req, res) => {
     res.send('Helloss World!');
 }
 
-const abcController =(req, res)=>{
-    res.send('abc');
+const getTest = (req, res) => {
+    res.render('home.ejs');
 }
 
-const testController =(req, res)=>{
-    res.render('test.ejs');
+const postAddUser = (req, res) => {
+    const{id,name,city}=req.body;
+    connection.query(
+        `INSERT INTO User
+        VALUES (?,?,?);`,
+        [id,name,city],
+        function(err, results, fields) {
+          console.log(results); // results contains rows returned by server
+        }
+      );
+    res.send('add succedd');
 }
 
-module.exports ={homeController, testController,abcController}
+module.exports = { getHome, getTest,postAddUser };

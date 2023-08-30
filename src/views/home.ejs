@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/test.css">
+</head>
+
+<body>
+    <!-- navigation -->
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+    </div>
+
+    <!-- form -->
+    <form action="/add_user" id="form" method="POST">
+        <fieldset>
+            <legend>ADD USER:</legend>
+
+            <label for="name">ID:</label>
+            <input type="text" id="id" name="id"><br><br>
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"><br><br>
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city"><br><br>
+
+            <input type="submit" value="Submit">
+        </fieldset>
+    </form>
+</body>
+
+</html>
